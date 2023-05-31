@@ -1,40 +1,52 @@
+import java.util.Random;
+import java.util.Scanner;
+
 public class MarsExpedition {
+    public MarsExpedition(){
+        bootExpedition();
+        signIn();
+        Scanner response = new Scanner(System.in);
+        String text = response.nextLine();
+        if(checkResponse(text)){
+            System.out.println("I knew you would say that. That's why you are Team Leader.");
+        } else {
+            System.out.println("It is a shame that you are Team Leader, and Mission Critical. You jump after prep.");
+        }
+        groupFinder();
 
-    public  MarsExpedition(){
-            String colonyName = "Topia";
-            int shipPopulation = 300;
-            double meals = 4000.00;
-            double leftovers = mealsAfterLanding(meals, 2);
-            System.out.println("Food left: " + leftovers);
-            shipPopulation = populationIncrease(shipPopulation, 5);
-            System.out.println("A baby boom has happend. Population increased to :" + shipPopulation);
-            leftovers += foodFound(meals, 0.5);
-            System.out.println("Food was found on the ground expedition. food increased to: " + leftovers);
+
     }
 
 
-
-
-
-    public static double mealsAfterLanding(double amount, int days){
-        double mealsLeft = (amount - 0.75) * days;
-        return mealsLeft;
+    public void signIn(){
+        System.out.println("Please enter your username: ");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Hello, " + input + ", Welcome to the expedition prep program. Are you ready to head out? (Y/N)");
     }
 
-    public static double foodFound(double meal, double amountFound){
-        double amount = meal *= amountFound;
-        return amount;
+    public void bootExpedition(){
+        Random num = new Random();
+        int text = num.nextInt(6000);
+        System.out.print("Boot sequence initialized......................... " );
+        System.out.println("Boot process took " + text + "ms.................");
     }
 
-    public static int populationIncrease(int population, int change){
-        population += change;
-        return population;
+    public Boolean checkResponse(String response){
+        if(response == "Y"){
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public static String landingSpot(String location){
-        switch(location){
-            case "The Plains": return "Bbzzz Landing in The Plain";
-            default: return "ERROR! flightplan already set: The Plain";
+    public int groupFinder(){
+        Scanner response = new Scanner(System.in);
+        int text = response.nextInt();
+        if(text > 2){
+            System.out.println("That's too many people. Max Crew capacity: 2");
+            return 2;
+        } else {
+            return 2;
         }
     }
 }

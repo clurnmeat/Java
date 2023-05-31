@@ -5,15 +5,20 @@ public class GuessingGame {
         System.out.println("Hello, " + setUser() + ", I am thinking of a number between 1 and 100");
         int compInput = randomNumber();
         int userInput = userGuess();
+
+        if (userInput > 100 || userInput < 0) {
+            System.out.println("You have entered too high or too low of a number, How ridiculous.");
+            userInput = userGuess();
+        }
+
         boolean check = checkAnswer(userInput, compInput);
         while (!check) {
-           int guess = userGuess();
+            int guess = userGuess();
             check = checkAnswer(guess, compInput);
         }
+
     }
-
-
-    private static int randomNumber() {
+    public static int randomNumber() {
         Random num = new Random();
         return num.nextInt(100);
     }
@@ -31,22 +36,21 @@ public class GuessingGame {
 
     }
 
+
+
     private static boolean checkAnswer(int usersGuess, int compGuess) {
         int tries = 0;
+
         if (usersGuess < compGuess) {
             System.out.println("Too Low.");
-            tries++;
             return false;
         } else if(usersGuess > compGuess){
             System.out.println("Too High.");
-            tries++;
             return false;
         } else {
-            System.out.println("Correct! You have figured it out in " + tries);
+            System.out.println("Correct! You have figured it out.");
             return true;
         }
-
-
 
     }
 }
