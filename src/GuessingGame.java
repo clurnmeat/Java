@@ -1,28 +1,23 @@
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 public class GuessingGame {
-    public static void main(String[] args) {
-
+    public GuessingGame(){
         System.out.println("Hello, "+ setUser() + ", I am thinking of a number between 1 and 100");
-
         int compInput = randomNumber();
-
-
         int userInput = userGuess();
-
-
-
-
-
+        while(!checkAnswer(userInput, compInput)){
+            userGuess();
+        }
     }
 
-    public static int randomNumber(){
+
+
+    private static int randomNumber(){
         Random num = new Random();
-        int number = num.nextInt(100);
-        return number;
+        return num.nextInt(100);
     }
 
-    public static String setUser(){
+    private static String setUser(){
         System.out.print("What is your name?");
         System.out.println("(type in your name) ");
         Scanner input = new Scanner(System.in);
@@ -30,10 +25,25 @@ public class GuessingGame {
         return userName;
     }
 
-    public static int userGuess(){
-        Scanner guessNum = new Scanner(System.in);
+    private static int userGuess(){
         System.out.print("Guess the number: ");
+        Scanner guessNum = new Scanner(System.in);
         return guessNum.nextInt();
+
+    }
+
+    private static boolean checkAnswer(int usersGuess, int compGuess){
+            if(usersGuess<compGuess){
+                System.out.println("Too Low.");
+                return false;
+            } else if (usersGuess > compGuess) {
+                System.out.println("Too High.");
+                return false;
+            }
+        {
+                System.out.println("Correct!");
+                return true;
+            }
 
     }
 }
