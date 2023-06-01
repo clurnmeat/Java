@@ -1,4 +1,4 @@
-package Controllers;
+package Main.Controllers;
 
 public class MarsLanding {
 
