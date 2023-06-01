@@ -2,26 +2,37 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MarsExpedition {
-    public MarsExpedition(){
+    public MarsExpedition() throws InterruptedException {
         bootExpedition();
         signIn();
         Scanner response = new Scanner(System.in);
         String text = response.nextLine();
-        if(checkResponse(text)){
-            System.out.println("I knew you would say that. That's why you are Team Leader.");
-        } else {
+        if (!checkResponse(text)) {
             System.out.println("It is a shame that you are Team Leader, and Mission Critical. You jump after prep.");
+        } else {
+            System.out.println("I knew you would say that. That's why you are Team Leader.");
         }
-        groupFinder();
+        int crew = groupFinder();
+        String vehicle = vehicleChoice();
+        String snacks = snackChoice();
+        System.out.println(vehicle + "is ready to depart loaded with: ");
+        System.out.println("Snacks: " + snacks);
+        System.out.println("Crew Amount: " + crew);
+        int n = 10;
+        while(n > 0){
+            System.out.println("Jump in " + n);
+            Thread.sleep(1000);
+            n-=1;
 
 
+        }
     }
 
 
     public void signIn(){
         System.out.println("Please enter your username: ");
         Scanner input = new Scanner(System.in);
-        System.out.println("Hello, " + input + ", Welcome to the expedition prep program. Are you ready to head out? (Y/N)");
+        System.out.println("Hello, " + input.nextLine() + ", Welcome to the expedition prep program. Are you ready to head out? (Y/N)");
     }
 
     public void bootExpedition(){
@@ -32,7 +43,7 @@ public class MarsExpedition {
     }
 
     public Boolean checkResponse(String response){
-        if(response == "Y"){
+        if(response.equals("Y")){
             return true;
         } else {
             return false;
@@ -40,13 +51,35 @@ public class MarsExpedition {
     }
 
     public int groupFinder(){
+        System.out.println("Crew Amount: ");
         Scanner response = new Scanner(System.in);
         int text = response.nextInt();
         if(text > 2){
             System.out.println("That's too many people. Max Crew capacity: 2");
-            return 2;
-        } else {
-            return 2;
         }
+        return 2;
+    }
+
+    public String snackChoice(){
+        System.out.println("You are only allowed to bring one Snack. What is your choice?");
+        Scanner response = new Scanner(System.in);
+        String snack = response.nextLine();
+        return ("You have chosen " + snack + ". Good luck Team Leader");
+
+
+    }
+
+    public String vehicleChoice(){
+        System.out.println("Select a Vehicle: A: ThunderShock ATV, B: SuperRad SnowBoard, C: Seamangler Submarine");
+        Scanner response = new Scanner(System.in);
+        String choice = response.nextLine();
+        switch (choice){
+            case "A": return "ThunderShock ATV has been chosen";
+            case "B": return "SuperRad SnowBoard has been chosen";
+            case "C": return "Seamangler Submarine has been chosen";
+            default:return "ThunderShock ATV has been chosen.";
+
+        }
+
     }
 }

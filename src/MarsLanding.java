@@ -9,7 +9,7 @@ public class MarsLanding {
             shipPopulation = populationIncrease(shipPopulation, 5);
             System.out.println("A baby boom has happend. Population increased to :" + shipPopulation);
             leftovers += foodFound(meals, 0.5);
-            System.out.println("Food was found on the ground expedition. food increased to: " + leftovers);
+            System.out.println("Food was grown from hydro-farms. food increased to: " + leftovers);
     }
 
 

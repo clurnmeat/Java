@@ -9,6 +9,7 @@ public class Mars {
         System.out.println("Landed");
         new MarsLanding();
         new MarsExpedition();
+        new FindingsList();
 
     }
 
