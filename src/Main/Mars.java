@@ -1,8 +1,15 @@
+package Main;
+
+import Controllers.FindingsList;
+import Controllers.GuessingGame;
+import Controllers.MarsExpedition;
+import Controllers.MarsLanding;
+
 import java.util.Random;
 public class Mars {
     public static void main(String[] args) throws InterruptedException {
         System.out.println(MarsLanding.landingSpot("The Bridge"));
-        System.out.println("Bzzzzzzzt... entering into Mars atmosphere. Prepare for landing Sequence...");
+        System.out.println("Bzzzzzzzt... entering into Main.Mars atmosphere. Prepare for landing Sequence...");
         Random time = new Random();
         int timer = time.nextInt(60);
         landingCheck(timer);

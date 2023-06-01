@@ -1,3 +1,5 @@
+package Controllers;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,8 +18,8 @@ public class MarsExpedition {
         String vehicle = vehicleChoice();
         String snacks = snackChoice();
         System.out.println(vehicle + "is ready to depart loaded with: ");
-        System.out.println("Snacks: " + snacks);
         System.out.println("Crew Amount: " + crew);
+        System.out.println("Snacks: " + snacks);
         int n = 10;
         while(n > 0){
             System.out.println("Jump in " + n);
