@@ -59,6 +59,7 @@ public class FindingsList {
     }
 
     public List checkElement(List list) {
+        System.out.println(list);
         System.out.println("Scanning items... One Moment....");
         for (int i = 0; i < list.size(); i++) {
             list.remove("not rock");

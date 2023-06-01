@@ -26,11 +26,14 @@ public class MarsExpedition {
 
 
         }
+        System.out.println("....Expedition started...");
+        Thread.sleep(10000);
+        System.out.println("Item(s) found: ");
     }
 
 
     public void signIn(){
-        System.out.println("Please enter your username: ");
+        System.out.println("Please enter your Username: ");
         Scanner input = new Scanner(System.in);
         System.out.println("Hello, " + input.nextLine() + ", Welcome to the expedition prep program. Are you ready to head out? (Y/N)");
     }
@@ -74,10 +77,9 @@ public class MarsExpedition {
         Scanner response = new Scanner(System.in);
         String choice = response.nextLine();
         switch (choice){
-            case "A": return "ThunderShock ATV has been chosen";
-            case "B": return "SuperRad SnowBoard has been chosen";
-            case "C": return "Seamangler Submarine has been chosen";
-            default:return "ThunderShock ATV has been chosen.";
+            case "B": return "SuperRad SnowBoard: ";
+            case "C": return "Sea-mangler Submarine: ";
+            default:return "ThunderShock ATV: ";
 
         }
 
