@@ -38,8 +38,6 @@ public class Main {
         cupcakeMenu.add(cupcake);
 
 
-
-
     }
 
 
