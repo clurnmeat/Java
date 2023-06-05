@@ -1,0 +1,19 @@
+Index: src/Main/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Main;\n\n\nimport Main.Controllers.*;\nimport java.util.ArrayList;\nimport java.util.Objects;\nimport java.util.Scanner;\n\n\npublic class Main {\n    public void main(String[] args) {\n\n        Cupcake cupcake = new Cupcake();\n        ArrayList<Cupcake> cupcakeMenu = new ArrayList<>();\n        RedVelvet redVelvet = new RedVelvet();\n        Chocolate chocolate = new Chocolate();\n        System.out.println(\"We are in the middle of creating the cupcake menu. We currently have three cupcakes on the menu but we need to decide on pricing.\");\n        System.out.println(\"We are deciding on the price for our standard cupcake. Here is the description:\");\n        cupcake.type();\n        Scanner input = new Scanner(System.in);\n        String priceText = input.nextLine();\n        double price = Double.parseDouble(priceText);\n        cupcake.setPrice(price);\n        System.out.println(\"We are deciding on the price for our redvelvet cupcake. Here is the description:\");\n        redVelvet.type();\n        input = new Scanner(System.in);\n        priceText = input.nextLine();\n        price = Double.parseDouble(priceText);\n        redVelvet.setPrice(price);\n        System.out.println(\"We are deciding on the price for our chocolate cupcake. Here is the description:\");\n        chocolate.type();\n        input = new Scanner(System.in);\n        priceText = input.nextLine();\n        price = Double.parseDouble(priceText);\n        chocolate.setPrice(price);\n        cupcakeMenu.add(chocolate);\n        cupcakeMenu.add(redVelvet);\n        cupcakeMenu.add(cupcake);\n\n\n\n\n    }\n\n\n\n\n\n\n\n\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main/Main.java b/src/Main/Main.java
+--- a/src/Main/Main.java	(revision 702aaf6233b66026dd3c9c611d640c78f7d67e41)
++++ b/src/Main/Main.java	(date 1685993860167)
+@@ -38,8 +38,6 @@
+         cupcakeMenu.add(cupcake);
+ 
+ 
+-
+-
+     }
+ 
+ 
