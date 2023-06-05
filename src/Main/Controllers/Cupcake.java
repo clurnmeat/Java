@@ -1,5 +1,7 @@
-class Cupcake{
-    public double price;
+package Main.Controllers;
+
+public class Cupcake{
+    private double price;
 
 
     public double getPrice(){
@@ -13,6 +15,7 @@ class Cupcake{
 
     public void type(){
         System.out.println("A basic, generic cupcake, with vanilla frosting");
+
     }
 
 

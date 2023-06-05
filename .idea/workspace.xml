@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e498880-1f54-4e97-a2e2-438f10beee57" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CupcakeWeek.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Cupcake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RedVelvet.java" afterDir="false" />
+    <list default="true" id="6e498880-1f54-4e97-a2e2-438f10beee57" name="Changes" comment="Started cupcake">
+      <change afterPath="$PROJECT_DIR$/src/Main/Controllers/Chocolate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/Controllers/Cupcake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/Controllers/RedVelvet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cupcake.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RedVelvet.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +53,18 @@
       <option name="presentableId" value="Default" />
       <updated>1685984237779</updated>
     </task>
+    <task id="LOCAL-00001" summary="Started cupcake">
+      <created>1685989062924</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685989062924</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Started cupcake" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started cupcake" />
   </component>
 </project>
