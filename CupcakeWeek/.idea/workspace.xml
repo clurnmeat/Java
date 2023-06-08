@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e498880-1f54-4e97-a2e2-438f10beee57" name="Changes" comment="Completed project 2">
-      <change afterPath="$PROJECT_DIR$/src/Main/Controllers/Orders.java" afterDir="false" />
+    <list default="true" id="6e498880-1f54-4e97-a2e2-438f10beee57" name="Changes" comment="Started part 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Controllers/Chocolate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Controllers/Chocolate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Controllers/Cupcake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Controllers/Cupcake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Controllers/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Controllers/Drink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Controllers/Milk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Controllers/Milk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Controllers/RedVelvet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Controllers/RedVelvet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Controllers/Soda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Controllers/Soda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685999479940</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Started part 3">
+      <created>1686220751409</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1686220751409</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,7 +231,8 @@
     <MESSAGE value="Started cupcake" />
     <MESSAGE value="Completed project 1" />
     <MESSAGE value="Completed project 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed project 2" />
+    <MESSAGE value="Started part 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started part 3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
