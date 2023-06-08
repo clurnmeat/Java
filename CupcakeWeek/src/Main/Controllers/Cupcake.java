@@ -15,7 +15,6 @@ public class Cupcake{
 
     public void type(){
         System.out.println("A basic, generic cupcake, with vanilla frosting");
-
     }
 
 

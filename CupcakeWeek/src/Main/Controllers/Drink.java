@@ -14,6 +14,5 @@ public class Drink {
 
     public void type(){
         System.out.println("A generic drink. (Water)");
-
     }
 }

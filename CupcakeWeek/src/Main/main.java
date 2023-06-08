@@ -1,3 +1,5 @@
+package Main;
+
 import Main.Controllers.*;
 
 import java.util.ArrayList;
@@ -6,7 +8,7 @@ import java.util.Scanner;
 
 public class main {
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("We are in the middle of creating the cupcake menu. We currently have three cupcakes on the menu but we need to decide on pricing.");
         System.out.println("We are deciding on the price for our standard cupcake. Here is the description:");
         ArrayList<Drink> drinks = new ArrayList<>();
@@ -57,7 +59,14 @@ public class main {
         cupcakeMenu.add(chocolate);
         cupcakeMenu.add(redVelvet);
         cupcakeMenu.add(cupcake);
+        for(int i=0; i<cupcakeMenu.size() && i< drinks.size(); i++){
+            cupcakeMenu.get(i).type();
+            System.out.println(cupcakeMenu.get(i).getPrice());
+            drinks.get(i).type();
+            System.out.println(drinks.get(i).getPrice());
 
+        }
+        new Orders();
 
     }
 
