@@ -34,6 +34,9 @@ public class main {
         drinks.add(soda);
         drinks.add(milk);
 
+
+
+
         System.out.println("We are deciding on the price for our standard cupcake. Here is the description:");
         Cupcake cupcake = new Cupcake();
         ArrayList<Cupcake> cupcakeMenu = new ArrayList<>();
@@ -66,7 +69,9 @@ public class main {
             System.out.println(drinks.get(i).getPrice());
 
         }
-        new Orders();
+        new Order(cupcakeMenu, drinks);
+
+
 
     }
 
