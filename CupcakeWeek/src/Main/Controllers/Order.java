@@ -14,9 +14,11 @@ public class Order{
 
 
         switch (userOrder) {
-            case "y": getMenuItems(cupcakeMenu, drinks);
-            break;
-            default:System.out.println("Have a good day");
+            case "y":
+                getMenuItems(cupcakeMenu, drinks);
+                break;
+            default:
+                System.out.println("Have a good day");
         }
         Boolean ordering = true;
         while (ordering) {
@@ -42,28 +44,32 @@ public class Order{
                 case 6:
                     addToDrinks(drinks, order, orderChoice - 4);
                     break;
-                default: System.out.println("Sorry we do not have that item.");
+                default:
+                    System.out.println("Sorry we do not have that item.");
             }
             System.out.println("Would you like to continue ordering?(Y/N) ");
             Scanner textInput = new Scanner(System.in);
             String text = textInput.nextLine();
             String continueOrder = text.toLowerCase();
             if (continueOrder.equalsIgnoreCase("N")) {
-                    ordering = false;
+                ordering = false;
             }
         }
         System.out.println(order.get(0));
         System.out.println(order.get(1));
+        for (int i = 0; i < order.size(); i++) {
+            System.out.println(order.get(i));
+        }
         double subtotal = 0.0;
-        for(int i=2; i<order.size();i++){
-            if(order.get(i) == cupcakeMenu.get(0)){
+        for (int i = 2; i < order.size(); i++) {
+            if (order.get(i) == cupcakeMenu.get(0)) {
                 cupcakeMenu.get(0).type();
                 subtotal += cupcakeMenu.get(0).getPrice();
             }
+
+
         }
-
     }
-
 
         public static void addToOrder(ArrayList<Cupcake> cupcakeMenu, ArrayList<Object> order, int orderChoice){
             Object date = LocalDate.now();
