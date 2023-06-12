@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e498880-1f54-4e97-a2e2-438f10beee57" name="Changes" comment="Completed part 4 of project unit 2">
-      <change afterPath="$PROJECT_DIR$/Untitled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Untitled_postgres_create.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-proj-3/starter/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-proj-3/starter/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-proj-3/starter/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-proj-3/starter/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-proj-3/starter/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-proj-3/starter/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-proj-3/starter/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-proj-3/starter/src/main/java/com/javaunit3/springmvc/BatmanMovie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-proj-3/starter/src/main/java/com/javaunit3/springmvc/BestMovieService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-proj-3/starter/src/main/java/com/javaunit3/springmvc/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-proj-3/starter/src/main/java/com/javaunit3/springmvc/MovieApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686535102417</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Completed part 4 of project unit 2">
+      <created>1686535268160</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1686535268160</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
