@@ -57,18 +57,31 @@ public class Order{
         }
         System.out.println(order.get(0));
         System.out.println(order.get(1));
-        for (int i = 0; i < order.size(); i++) {
-            System.out.println(order.get(i));
-        }
         double subtotal = 0.0;
         for (int i = 2; i < order.size(); i++) {
-            if (order.get(i) == cupcakeMenu.get(0)) {
-                cupcakeMenu.get(0).type();
-                subtotal += cupcakeMenu.get(0).getPrice();
+            for (int j = 0; j < cupcakeMenu.size(); j++) {
+                if (j > 2) {
+                    j = 0;
+
+                }
+                if (order.get(i) == drinks.get(j)) {
+                    drinks.get(j).type();
+                    subtotal += drinks.get(j).getPrice();
+
+                }
+                if (order.get(i) == cupcakeMenu.get(j)) {
+                    cupcakeMenu.get(j).type();
+                    subtotal += cupcakeMenu.get(j).getPrice();
+
+                }
+
+
             }
-
-
         }
+        System.out.println(subtotal);
+        new CreateFile();
+        new WriteToFile(order);
+
     }
 
         public static void addToOrder(ArrayList<Cupcake> cupcakeMenu, ArrayList<Object> order, int orderChoice){
@@ -107,8 +120,6 @@ public class Order{
                 System.out.println("Price: " +  drinks.get(j).getPrice());
             }
 
-        }
-        public static void getCupcakeItem(ArrayList<Cupcake> cupcake, ArrayList<Object> order){
 
         }
     }
