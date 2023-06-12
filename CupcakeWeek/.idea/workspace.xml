@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e498880-1f54-4e97-a2e2-438f10beee57" name="Changes" comment="Began part 4">
-      <change afterPath="$PROJECT_DIR$/salesData.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Controllers/CreateFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Controllers/WriteToFile.java" afterDir="false" />
+    <list default="true" id="6e498880-1f54-4e97-a2e2-438f10beee57" name="Changes" comment="Completed part 4 of project unit 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Controllers/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Controllers/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686430323409</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Completed part 4 of project unit 2">
+      <created>1686534000267</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1686534000267</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -244,7 +247,8 @@
     <MESSAGE value="Completed project 2" />
     <MESSAGE value="Started part 3" />
     <MESSAGE value="Began part 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Began part 4" />
+    <MESSAGE value="Completed part 4 of project unit 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed part 4 of project unit 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
