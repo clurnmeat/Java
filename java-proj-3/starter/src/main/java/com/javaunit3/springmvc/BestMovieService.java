@@ -10,10 +10,10 @@ public class BestMovieService {
     private Movie movie = new SetMovie();
 
     @Qualifier
-    private Movie movie1 = new TheTitanic();
+    private static Movie movie1 = new TheTitanic();
 
 
-    public Movie getBestMovie(){
+    public static Movie getBestMovie(){
         return movie1;
     }
 
