@@ -18,4 +18,14 @@ public class MovieController {
         model.addAttribute("BestMovie", BestMovieService.getBestMovie().getTitle());
         return "bestMovie";
     }
+
+    @RequestMapping("/voteForBestMovieForm")
+    public String bestMovieForm(){
+        return "voteForBestMovie";
+    }
+
+    @RequestMapping("/voteForBestMovie")
+    public String voteForBestMovie(){
+        return "voteForBestMovie";
+    }
 }
