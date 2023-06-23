@@ -36,7 +36,7 @@ public class MovieController {
         return "voteForBestMovie";
     }
     @Autowired
-    private SessionFactory hibernateConfig;
+    private SessionFactory sessionFactory;
 
     @RequestMapping("/addMovieForm")
     public String addMovieForm(){
@@ -51,9 +51,9 @@ public class MovieController {
         movie.setTitle(movieTitle);
         movie.setGenre(genre);
         movie.setMaturityRating(rating);
-        hibernateConfig.getCurrentSession().beginTransaction().begin();
-        hibernateConfig.getCurrentSession().save(movie);
-        hibernateConfig.getCurrentSession().beginTransaction().commit();
+        sessionFactory.getCurrentSession().beginTransaction().begin();
+        sessionFactory.getCurrentSession().save(movie);
+        sessionFactory.getCurrentSession().beginTransaction().commit();
         return "addMovie";
     }
 }
