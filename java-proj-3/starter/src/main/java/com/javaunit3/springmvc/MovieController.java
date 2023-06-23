@@ -2,7 +2,6 @@ package com.javaunit3.springmvc;
 
 import com.javaunit3.springmvc.model.MovieEntity;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class MovieController {
+
+
 
     @RequestMapping("/")
      public String getIndexPage(){
@@ -35,15 +36,12 @@ public class MovieController {
         model.addAttribute("BestMovieVote", movieTitle);
         return "voteForBestMovie";
     }
-    @Autowired
+
     private SessionFactory sessionFactory;
 
+
     @RequestMapping("/addMovieForm")
-    public String addMovieForm(){
-        return "addMovie";
-    }
-    @RequestMapping("/addMovie")
-    public String addMovie(HttpServletRequest request){
+    public String addMovieForm(HttpServletRequest request){
         String movieTitle = request.getParameter("movieTitle");
         String rating = request.getParameter("movieRating");
         String genre = request.getParameter("movieGenre");
@@ -54,6 +52,11 @@ public class MovieController {
         sessionFactory.getCurrentSession().beginTransaction().begin();
         sessionFactory.getCurrentSession().save(movie);
         sessionFactory.getCurrentSession().beginTransaction().commit();
+        return "addMovie";
+    }
+    @RequestMapping("/addMovie")
+    public String addMovie(){
+
         return "addMovie";
     }
 }
