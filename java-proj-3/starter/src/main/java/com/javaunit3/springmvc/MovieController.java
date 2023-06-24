@@ -2,6 +2,7 @@ package com.javaunit3.springmvc;
 
 import com.javaunit3.springmvc.model.MovieEntity;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 public class MovieController {
 
 
+    @Autowired
+    public SessionFactory sessionFactory;
 
     @RequestMapping("/")
      public String getIndexPage(){
@@ -37,7 +40,6 @@ public class MovieController {
         return "voteForBestMovie";
     }
 
-    private SessionFactory sessionFactory;
 
 
     @RequestMapping("/addMovieForm")
@@ -54,9 +56,11 @@ public class MovieController {
         sessionFactory.getCurrentSession().beginTransaction().commit();
         return "addMovie";
     }
+
     @RequestMapping("/addMovie")
     public String addMovie(){
-
         return "addMovie";
     }
+
+
 }
