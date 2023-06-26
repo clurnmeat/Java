@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class HibernateConfig {
         @Autowired
-        public SessionFactory sessionFactory(){
+        public static SessionFactory sessionFactory(){
                 SessionFactory factory =  new org.hibernate.cfg.Configuration().addAnnotatedClass(MovieEntity.class).buildSessionFactory();
                 return factory;
         }

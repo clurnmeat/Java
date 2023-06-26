@@ -6,7 +6,7 @@
 </head>
 <body>
 <a href="/">Home</a>
-<form action="" method="get">
+<form action="" method="put">
         Vote for Best Movie:
         <input type="text" name="movieTitle" />
         <button type="submit">Submit</button>
@@ -14,5 +14,12 @@
 <br>
 <br>
 <p th:text="${BestMovieVote}" />
+<br>
+<br>
+<select name="Movies" id="movies">
+    <option value="0">Select A Movie</option>
+    <option th:each="movie : ${movies}" th:value="${movie.id}" th:text="${movie.title}"></option>
+</select>
+<button type="submit">Submit</button>
 </body>
 </html>

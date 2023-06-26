@@ -18,6 +18,9 @@ public class MovieEntity {
     @Column(name = "genre")
     private String genre;
 
+    @Column(name = "votes")
+    private VoteEntity vote;
+
     public int getId(){
         return this.id;
     }
@@ -46,5 +49,18 @@ public class MovieEntity {
 
     public void setGenre(String genre){
         this.genre = genre;
+    }
+
+    public void addVote(VoteEntity vote){
+        this.vote = vote;
+    }
+
+    public VoteEntity getVote() {
+        return vote;
+    }
+
+
+    public VoteEntity[] getVotes() {
+        return new VoteEntity[0];
     }
 }
