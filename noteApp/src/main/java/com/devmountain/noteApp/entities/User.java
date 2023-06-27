@@ -1,5 +1,6 @@
 package com.devmountain.noteApp.entities;
 
+import com.devmountain.noteApp.dtos.UserDto;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,6 +18,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
+
     @Column(unique = true)
     private String username;
     @Column
@@ -41,4 +45,20 @@ public class User {
         this.id = id;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public User(UserDto userDto) {
+        if (userDto.getUsername() != null){
+            this.username = userDto.getUsername();
+        }
+        if(userDto.getPassword() != null){
+            this.password = userDto.getPassword();
+        }
+    }
 }
