@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
         return response;
     }
 
-
+    @Override
     @Transactional
     public List<String> userLogin(UserDto userDto) {
         List<String> response = new ArrayList<>();
@@ -41,9 +41,9 @@ public class UserServiceImpl implements UserService {
             } else {
                 response.add("Username or Password is incorrect!");
             }
-        } else {response.add("Username or password is incorrect");
 
-        } return response;
+        }
+        return response;
     }
 
 

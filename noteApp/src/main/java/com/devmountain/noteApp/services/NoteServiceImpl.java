@@ -21,7 +21,7 @@ import static java.util.Collections.EMPTY_LIST;
 
 
 @Service
-public class NoteServiceImpl {
+public class NoteServiceImpl implements NoteService {
     @Autowired
     private NoteRepository noteRepository;
 
@@ -29,6 +29,7 @@ public class NoteServiceImpl {
     private UserRepository userRepository;
 
 
+     @Override
      @Transactional
      public void addNote(NoteDto noteDto, Long userId){
          List<String> response = new ArrayList<>();
@@ -39,6 +40,7 @@ public class NoteServiceImpl {
          response.add("Note Added Successfully");
 
      }
+    @Override
     @Transactional
      public List<NoteDto> getAllNotesByUserId(Long userId){
          Optional<User> userOptional = userRepository.findById(userId);
@@ -49,11 +51,13 @@ public class NoteServiceImpl {
          return Collections.emptyList();
      }
 
+    @Override
     @Transactional
     public void removeNoteById(Long noteId) {
         Optional<Note> noteOptional = noteRepository.findById(noteId);
         noteOptional.ifPresent(note -> noteRepository.delete(note));
     }
+    @Override
     @Transactional
     public void updateNoteById(NoteDto noteDto){
         Optional<Note> noteOptional = noteRepository.findById(noteDto.getId());
@@ -64,6 +68,7 @@ public class NoteServiceImpl {
 
     }
 
+    @Override
     @Transactional
     public Optional<NoteDto> getNoteById(Long noteId){
          Optional<Note> noteOptional = noteRepository.findById(noteId);
