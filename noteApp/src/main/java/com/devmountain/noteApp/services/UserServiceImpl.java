@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
                 response.add("http://localhost:8080/home.html");
                 response.add(String.valueOf(userOptional.get().getId()));
             } else {
-                response.add("http://localhost:8080/register.html");
+                response.add("http://localhost:8080/login.html");
             }
 
         }
