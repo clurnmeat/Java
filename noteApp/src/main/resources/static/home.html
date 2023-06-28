@@ -7,28 +7,36 @@
     <title>Home</title>
 </head>
 <body>
-<a class="btn btn-danger navbar-btn" href="login.html">Logout</a>
+<a class="btn btn-danger navbar-btn" href="login.html" onclick="handleLogout()">Logout</a>
 <div class="container" id="home-container">
     <div id="note-form-container" >
         <form id="note-form">
             <div class="form-group">
-                <textarea class="form-control" id="note-input" placeholder="Add your note.." rows="5"></textarea>
+                <textarea class="form-control" id="note-input" placeholder="Add your note.." rows="5" value="0"></textarea>
             </div>
             <button class="btn btn-primary mt-2" type="submit">Submit</button>
         </form>
     </div>
-    <div id="edit-note-modal">
-        <div>
-            <div>
+    <div class="modal fade" id="edit-note-modal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="note-edit-modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="note-edit-modal-title">Edit your note</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex">
+                    <textarea class="form-control" id="note-body" rows="5" value="0"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="update-note-button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                </div>
 
             </div>
         </div>
-        <label for="note-body">Edit your note:</label>
-        <textarea class="form-control" rows="5" id="note-body" placeholder="Edit..."></textarea>
     </div>
-    <button type="button" class="btn btn-secondary">Close</button>
-    <button type="button" class="btn btn-primary" id="update-note-btn">Save</button>
 </div>
+
 <script src="./javascript/home.js"></script>
 </body>
 </html>

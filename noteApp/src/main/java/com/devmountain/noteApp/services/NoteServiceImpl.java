@@ -32,12 +32,10 @@ public class NoteServiceImpl implements NoteService {
      @Override
      @Transactional
      public void addNote(NoteDto noteDto, Long userId){
-         List<String> response = new ArrayList<>();
          Optional<User> userOptional = userRepository.findById(userId);
          Note note = new Note(noteDto);
          userOptional.ifPresent(note::setUser);
          noteRepository.saveAndFlush(note);
-         response.add("Note Added Successfully");
 
      }
     @Override
