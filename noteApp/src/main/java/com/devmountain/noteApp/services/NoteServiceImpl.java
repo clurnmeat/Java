@@ -36,8 +36,8 @@ public class NoteServiceImpl implements NoteService {
          Note note = new Note(noteDto);
          userOptional.ifPresent(note::setUser);
          noteRepository.saveAndFlush(note);
-
      }
+
     @Override
     @Transactional
      public List<NoteDto> getAllNotesByUserId(Long userId){
@@ -55,6 +55,7 @@ public class NoteServiceImpl implements NoteService {
         Optional<Note> noteOptional = noteRepository.findById(noteId);
         noteOptional.ifPresent(note -> noteRepository.delete(note));
     }
+
     @Override
     @Transactional
     public void updateNoteById(NoteDto noteDto){

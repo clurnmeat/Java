@@ -13,6 +13,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/notes")
 public class NoteController {
+
     @Autowired
     private NoteService noteService;
 
@@ -27,7 +28,7 @@ public class NoteController {
     }
 
     @DeleteMapping("/{noteId}")
-    public void deleteNote(Long noteId){
+    public void deleteNote(@PathVariable Long noteId){
         noteService.removeNoteById(noteId);
     }
 
@@ -37,7 +38,7 @@ public class NoteController {
     }
 
     @GetMapping("{noteId}")
-    public Optional<NoteDto> getNote(Long noteId){
+    public Optional<NoteDto> getNote(@PathVariable Long noteId){
         return noteService.getNoteById(noteId);
     }
 
