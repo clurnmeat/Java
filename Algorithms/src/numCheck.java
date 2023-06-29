@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class numCheck {
+    public static List<Integer> numList = new ArrayList<>();
     public static void main(String[]args){
-       List<Integer> numList = new ArrayList<>();
        for(int i=0; i<11; i++){
            numList.add(i);
        }
