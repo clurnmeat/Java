@@ -5,7 +5,7 @@ import java.util.List;
 
 public class balancePar {
     public static String parString = "((((((()))))))))))))))))(){{{{{{}}}}}}}}[][][][][][]}}}}[[[]]][[]]{asdf";
-    public static List s = Arrays.asList(")", "(", "{", "}","[", "]", "<", ">");
+    public static List<String> s = Arrays.asList(")", "(", "{", "}","[", "]", "<", ">");
     public static void main(String[]args){
         if(checkPar(parString) % 2 == 0){
             System.out.println(true);
