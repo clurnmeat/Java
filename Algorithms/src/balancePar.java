@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class balancePar {
-    public static String parString = "((((((()))))))))))))))))()asdf";
+    public static String parString = "((((((()))))))))))))))))(){{{{{{}}}}}}}}[][][][][][]}}}}[[[]]][[]]{asdf";
     public static void main(String[]args){
         if(checkPar(parString) % 2 == 0){
             System.out.println(true);
@@ -17,7 +17,7 @@ public class balancePar {
         List<Character> chars = new ArrayList<>();
         for(int i=0; i<pars.length();i++){
             chars.add(pars.charAt(i));
-            for (String s : Arrays.asList(")", "(")) {
+            for (String s : Arrays.asList(")", "(", "{", "}","[", "]", "<", ">")) {
                 if (chars.get(i) == s.charAt(0)) {
                     counter++;
                 }
