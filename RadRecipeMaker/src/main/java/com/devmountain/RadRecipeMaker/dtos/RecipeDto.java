@@ -15,22 +15,34 @@ import java.util.Set;
 @NoArgsConstructor
 public class RecipeDto implements Serializable {
     private Long id;
-    private String recipeName;
-    private String recipeIngredients;
     private String recipe;
+    private String recipe_ingredients;
+    private String recipe_name;
 
-    private Set<Comment> commentSet = new HashSet<>();
+
+    private Set<Comment> commentDtoSet = new HashSet<>();
+
+
 
     public RecipeDto(Recipe recipe){
+
         if(recipe.getId() != null){
             this.id = recipe.getId();
-        } else if(recipe.getRecipeName() != null){
-            this.recipeName = recipe.getRecipeIngredients();
-        } else if(recipe.getCommentSet() != null){
-            this.commentSet = recipe.getCommentSet();
-        } else if(recipe.getRecipe() != null){
+        }
+        if(recipe.getRecipeName() != null){
+            this.recipe_name = recipe.getRecipeName();
+        }
+
+        if(recipe.getRecipeIngredients() != null){
+            this.recipe_ingredients = recipe.getRecipeIngredients();
+        }
+
+        if(recipe.getRecipe() != null){
             this.recipe = recipe.getRecipe();
         }
+
+
+
     }
 
 

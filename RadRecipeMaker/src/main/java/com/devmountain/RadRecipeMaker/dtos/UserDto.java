@@ -4,7 +4,6 @@ import com.devmountain.RadRecipeMaker.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -18,6 +17,7 @@ public class UserDto implements Serializable {
     private String username;
     private String password;
     private Set<CommentDto> commentDtoSet = new HashSet<>();
+
 
     public UserDto(User user){
         if (user.getId() != null){

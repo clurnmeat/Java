@@ -16,7 +16,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class RecipeServiceImpl implements RecipeService {
+public abstract class RecipeServiceImpl implements RecipeService {
     @Autowired
     private RecipeRepository recipeRepository;
 
@@ -31,12 +31,14 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
+    @Transactional
     public void deleteRecipe(Long recipeId){
         Optional<Recipe> recipeOptional = recipeRepository.findById(recipeId);
         recipeOptional.ifPresent(recipe -> recipeRepository.delete(recipe));
     }
 
     @Override
+    @Transactional
     public void updateRecipe(@NotNull RecipeDto recipeDto){
         Optional<Recipe> recipeOptional = recipeRepository.findById(recipeDto.getId());
         recipeOptional.ifPresent(recipe -> {
@@ -46,6 +48,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
+    @Transactional
     public List<RecipeDto> getAllRecipesByRecipeId(Long recipeId){
         Optional<Recipe> recipeOptional = recipeRepository.findById(recipeId);
         if(recipeOptional.isPresent()){
@@ -56,12 +59,20 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
+    @Transactional
     public Optional<RecipeDto> getRecipeById(Long recipeId){
         Optional<Recipe> recipeOptional = recipeRepository.findById(recipeId);
         if(recipeOptional.isPresent()){
             return Optional.of(new RecipeDto(recipeOptional.get()));
         }
         return Optional.empty();
+    }
+
+    @Override
+    @Transactional
+    public Optional<Recipe> getRecipeByName(String recipeDto){
+        Optional<Recipe> recipeDtoOptional = recipeRepository.findByRecipeName(recipeDto);
+        return recipeDtoOptional;
     }
 
 }

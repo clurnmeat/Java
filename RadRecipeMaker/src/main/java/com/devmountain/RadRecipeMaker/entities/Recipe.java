@@ -22,15 +22,15 @@ public class Recipe {
     private Long id;
 
     @Column
-    private String recipeName;
+    private String recipe_name;
 
     @Column
-    private String recipeIngredients;
+    private String recipe_ingredients;
 
     @Column
     private String recipe;
 
-    @OneToMany(mappedBy = "recipe", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @OneToMany(mappedBy = "recipe", cascade = {CascadeType.MERGE, CascadeType.ALL})
     @JsonManagedReference(value="recipe-comment")
     private Set<Comment> commentSet = new HashSet<>();
 
@@ -39,11 +39,11 @@ public class Recipe {
     }
 
     public Recipe(RecipeDto recipeDto) {
-        this.id = id;
-        this.recipeName = recipeName;
-        this.recipeIngredients = recipeIngredients;
-        this.recipe = recipe;
-        this.commentSet = commentSet;
+        this.id = recipeDto.getId();
+        this.recipe_name = recipeDto.getRecipe_name();
+        this.recipe_ingredients = recipeDto.getRecipe_ingredients();
+        this.recipe = recipeDto.getRecipe();
+        this.commentSet = recipeDto.getCommentDtoSet();
     }
 
 
@@ -61,19 +61,19 @@ public class Recipe {
     }
 
     public String getRecipeName() {
-        return recipeName;
+        return recipe_name;
     }
 
     public void setRecipeName(String recipeName) {
-        this.recipeName = recipeName;
+        this.recipe_name = recipeName;
     }
 
     public String getRecipeIngredients() {
-        return recipeIngredients;
+        return recipe_ingredients;
     }
 
     public void setRecipeIngredients(String recipeIngredients) {
-        this.recipeIngredients = recipeIngredients;
+        this.recipe_ingredients = recipeIngredients;
     }
 
     public String getRecipe() {
