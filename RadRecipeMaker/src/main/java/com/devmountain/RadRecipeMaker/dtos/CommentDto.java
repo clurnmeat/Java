@@ -30,9 +30,4 @@ public class CommentDto implements Serializable {
         }
     }
 
-    public CommentDto(CommentDto commentDto){
-        if(commentDto.getComment() != null){
-            this.comment = commentDto.getComment();
-        }
-    }
 }

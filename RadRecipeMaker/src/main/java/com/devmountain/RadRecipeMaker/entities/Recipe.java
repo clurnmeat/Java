@@ -1,6 +1,8 @@
 package com.devmountain.RadRecipeMaker.entities;
 
+import com.devmountain.RadRecipeMaker.dtos.RecipeDto;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,12 +31,22 @@ public class Recipe {
     private String recipe;
 
     @OneToMany(mappedBy = "recipe", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JsonBackReference
+    @JsonManagedReference(value="recipe-comment")
     private Set<Comment> commentSet = new HashSet<>();
 
     public Long getId() {
         return id;
     }
+
+    public Recipe(RecipeDto recipeDto) {
+        this.id = id;
+        this.recipeName = recipeName;
+        this.recipeIngredients = recipeIngredients;
+        this.recipe = recipe;
+        this.commentSet = commentSet;
+    }
+
+
 
     public Set<Comment> getCommentSet() {
         return commentSet;

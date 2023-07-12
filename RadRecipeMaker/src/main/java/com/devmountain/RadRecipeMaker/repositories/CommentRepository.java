@@ -1,0 +1,7 @@
+package com.devmountain.RadRecipeMaker.repositories;
+
+import com.devmountain.RadRecipeMaker.entities.Comment;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CommentRepository extends JpaRepository<Comment, Long> {
+}

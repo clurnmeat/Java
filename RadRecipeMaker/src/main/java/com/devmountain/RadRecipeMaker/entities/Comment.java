@@ -1,5 +1,6 @@
 package com.devmountain.RadRecipeMaker.entities;
 
+import com.devmountain.RadRecipeMaker.dtos.CommentDto;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,13 +21,16 @@ public class Comment {
     private String comment;
 
     @ManyToOne
-    @JsonBackReference
+    @JsonBackReference(value = "user-comment")
     private User user;
 
 
     @ManyToOne
-    @JsonBackReference
+    @JsonBackReference(value = "recipe-comment")
     private Recipe recipe;
+
+    public Comment(CommentDto commentDto) {
+    }
 
 
     public User getUser() {

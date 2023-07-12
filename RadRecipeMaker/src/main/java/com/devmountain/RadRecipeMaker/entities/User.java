@@ -1,6 +1,7 @@
 package com.devmountain.RadRecipeMaker.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.devmountain.RadRecipeMaker.dtos.UserDto;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,9 +26,15 @@ public class User {
     @Column
     private String password;
 
+
+
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JsonBackReference
+    @JsonManagedReference(value = "user-comment")
     private Set<Comment> commentSet = new HashSet<>();
+
+
+    public User(UserDto userDto) {
+    }
 
     public Long getId() {
         return id;
@@ -52,4 +59,14 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Set<Comment> getCommentSet() {
+        return commentSet;
+    }
+
+    public void setCommentSet(Set<Comment> commentSet) {
+        this.commentSet = commentSet;
+    }
+
+
 }

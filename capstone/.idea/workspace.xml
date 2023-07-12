@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbd8e836-da01-4d9e-99a1-0a9380d12ace" name="Changes" comment="testing">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/configuration/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/controllers/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/controllers/RecipeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/repositories/CommentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/repositories/RecipeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/services/CommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/services/CommentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/services/RecipeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/services/RecipeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RadRecipeMaker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RadRecipeMaker/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/entities/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/entities/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/entities/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/entities/Recipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RadRecipeMaker/src/main/java/com/devmountain/RadRecipeMaker/entities/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,14 +49,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/macbook/work/Java/RadRecipeMaker"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/macbook/work/Java/RadRecipeMaker&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
