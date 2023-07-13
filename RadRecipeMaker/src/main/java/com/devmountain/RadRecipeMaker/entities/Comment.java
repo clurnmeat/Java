@@ -30,6 +30,7 @@ public class Comment {
     private Recipe recipe;
 
     public Comment(CommentDto commentDto) {
+
     }
 
 
