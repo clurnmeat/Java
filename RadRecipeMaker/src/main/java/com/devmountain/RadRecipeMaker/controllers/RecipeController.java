@@ -28,10 +28,10 @@ public class RecipeController {
         return recipeService.getRecipeById(recipeId).get();
     }
 
-    @PostMapping("/{recipe_name}")
-    public Optional<Recipe> searchByName(@PathVariable String recipe_name){
-        return recipeService.getRecipeByName(recipe_name);
-    }
+//    @PostMapping("/{recipe_name}")
+//    public Optional<Recipe> searchByName(@PathVariable String recipe_name){
+//        return recipeService.getRecipeByName(recipe_name);
+//    }
 
 
 

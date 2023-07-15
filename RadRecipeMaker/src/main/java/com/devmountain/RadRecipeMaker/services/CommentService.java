@@ -6,9 +6,10 @@ import jakarta.transaction.Transactional;
 import java.util.List;
 
 public interface CommentService {
-    @Transactional
-    List<String> addComment(CommentDto commentDto, Long recipeId);
+
 
     @Transactional
+    List<String> addComment(CommentDto commentDto);
+
     void deleteComment(long commentId);
 }

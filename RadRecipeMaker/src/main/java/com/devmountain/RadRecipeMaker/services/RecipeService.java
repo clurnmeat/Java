@@ -3,6 +3,7 @@ package com.devmountain.RadRecipeMaker.services;
 import com.devmountain.RadRecipeMaker.dtos.RecipeDto;
 import com.devmountain.RadRecipeMaker.entities.Recipe;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,6 +27,5 @@ public interface RecipeService {
     Optional<RecipeDto> getRecipeById(Long recipeId);
 
 
-    @Transactional
-    Optional<Recipe> getRecipeByName(String recipeDto);
+
 }
