@@ -1,13 +1,11 @@
 package com.devmountain.RadRecipeMaker.controllers;
 
 import com.devmountain.RadRecipeMaker.dtos.RecipeDto;
-import com.devmountain.RadRecipeMaker.entities.Recipe;
 import com.devmountain.RadRecipeMaker.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RestController
@@ -29,7 +27,7 @@ public class RecipeController {
     }
 
     @PostMapping("/{recipe_name}")
-    public Optional<Recipe> searchByName(@PathVariable String recipe_name){
+    public String searchByName(@PathVariable String recipe_name){
         return recipeService.getRecipeByName(recipe_name);
     }
 

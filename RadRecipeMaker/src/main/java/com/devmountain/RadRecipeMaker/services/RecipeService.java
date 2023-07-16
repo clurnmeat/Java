@@ -1,9 +1,7 @@
 package com.devmountain.RadRecipeMaker.services;
 
 import com.devmountain.RadRecipeMaker.dtos.RecipeDto;
-import com.devmountain.RadRecipeMaker.entities.Recipe;
 import jakarta.transaction.Transactional;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,12 +18,14 @@ public interface RecipeService {
 
 
     void updateRecipe(RecipeDto recipeDto);
+    
 
-    List<RecipeDto> getAllRecipesByRecipeId(Long recipeId);
-   @Transactional
+    @Transactional
+    List<RecipeDto> getAllRecipesByRecipeId(long recipeId);
+
+    @Transactional
     Optional<RecipeDto> getRecipeById(Long recipeId);
 
 
-    @Transactional
-    Optional<Recipe> getRecipeByName(String recipeDto);
+    String getRecipeByName(String recipeName);
 }

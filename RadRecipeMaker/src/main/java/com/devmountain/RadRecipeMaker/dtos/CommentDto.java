@@ -17,9 +17,9 @@ public class CommentDto implements Serializable {
 
     private String comment;
 
-    private User userDto;
+    private User user;
 
-    private Recipe recipeDto;
+    private Recipe recipe;
 
     public CommentDto(Comment comment){
         if(comment.getId() != null){
@@ -27,6 +27,12 @@ public class CommentDto implements Serializable {
         }
         if(comment.getComment() != null){
             this.comment = comment.getComment();
+        }
+        if(comment.getUser() != null){
+            this.user = comment.getUser();
+        }
+        if(comment.getRecipe() != null){
+            this.recipe = comment.getRecipe();
         }
     }
 

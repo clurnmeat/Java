@@ -1,7 +1,6 @@
 package com.devmountain.RadRecipeMaker.entities;
 
 import com.devmountain.RadRecipeMaker.dtos.RecipeDto;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

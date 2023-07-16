@@ -33,6 +33,13 @@ public class Comment {
 
     }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
 
     public User getUser() {
         return user;
