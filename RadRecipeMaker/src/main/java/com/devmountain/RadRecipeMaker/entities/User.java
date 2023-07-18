@@ -29,7 +29,7 @@ public class User {
 
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JsonManagedReference(value = "user-comment")
+    @JsonManagedReference(value = "user")
     private Set<Comment> commentSet = new HashSet<>();
 
 

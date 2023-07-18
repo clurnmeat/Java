@@ -18,20 +18,30 @@ public class CommentServiceImpl implements CommentService {
 
     @Autowired
     private RecipeRepository recipeRepository;
+
     @Autowired
     private CommentRepository commentRepository;
 
     @Override
     @Transactional
-    public List<String> addComment(CommentDto commentDto, Long recipeId){
-        Optional<Recipe> recipeOptional = recipeRepository.findById(recipeId);
+    public List<String> addComment(CommentDto commentDto, Long recipe_id, Long user_id){
+        Optional<Recipe> recipeOptional = recipeRepository.findById(recipe_id);
         List<String> response = new ArrayList<>();
         Comment comment = new Comment(commentDto);
-        recipeOptional.isPresent();
-        commentRepository.saveAndFlush(comment);
-        response.add("Successfully added Comment");
+        if(recipeOptional.isPresent()){
+            comment.setComment(commentDto.getComment());
+            commentRepository.saveAndFlush(comment);
+
+            response.add("Successfully added Comment");
+        } else {
+            response.add("Comment Failed to add. Please try again");
+        }
+
         return response;
     }
+
+
+
 
     @Override
     @Transactional

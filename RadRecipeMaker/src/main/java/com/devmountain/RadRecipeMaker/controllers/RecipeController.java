@@ -27,8 +27,8 @@ public class RecipeController {
     }
 
     @PostMapping("/{recipe_name}")
-    public String searchByName(@PathVariable String recipe_name){
-        return recipeService.getRecipeByName(recipe_name);
+    public String searchByName(@PathVariable RecipeDto recipeDto){
+        return recipeDto.getRecipe_name();
     }
 
 

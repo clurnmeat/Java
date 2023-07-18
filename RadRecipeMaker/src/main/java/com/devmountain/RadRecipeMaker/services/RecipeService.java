@@ -1,6 +1,8 @@
 package com.devmountain.RadRecipeMaker.services;
 
+import com.devmountain.RadRecipeMaker.dtos.CommentDto;
 import com.devmountain.RadRecipeMaker.dtos.RecipeDto;
+import com.devmountain.RadRecipeMaker.entities.Recipe;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
@@ -27,5 +29,8 @@ public interface RecipeService {
     Optional<RecipeDto> getRecipeById(Long recipeId);
 
 
-    String getRecipeByName(String recipeName);
+    @Transactional
+    List<String> addComment(Long recipeId, CommentDto commentDto, Long userId);
+    
+    
 }

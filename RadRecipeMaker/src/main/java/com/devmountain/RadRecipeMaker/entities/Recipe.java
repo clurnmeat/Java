@@ -60,7 +60,7 @@ public class Recipe {
     }
 
     public String getRecipeName() {
-        return recipe_name;
+        return this.recipe_name;
     }
 
     public void setRecipeName(String recipeName) {
@@ -68,7 +68,7 @@ public class Recipe {
     }
 
     public String getRecipeIngredients() {
-        return recipe_ingredients;
+        return this.recipe_ingredients;
     }
 
     public void setRecipeIngredients(String recipeIngredients) {

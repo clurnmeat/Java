@@ -21,17 +21,18 @@ public class Comment {
     private String comment;
 
     @ManyToOne
-    @JsonBackReference(value = "user-comment")
+    @JsonBackReference(value = "user")
     private User user;
 
 
     @ManyToOne
-    @JsonBackReference(value = "recipe-comment")
+    @JsonBackReference(value = "recipe")
     private Recipe recipe;
 
     public Comment(CommentDto commentDto) {
 
     }
+
 
     public void setUser(User user) {
         this.user = user;

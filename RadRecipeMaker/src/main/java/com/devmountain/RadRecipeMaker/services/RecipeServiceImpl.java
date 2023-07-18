@@ -8,7 +8,6 @@ import com.devmountain.RadRecipeMaker.repositories.RecipeRepository;
 import jakarta.transaction.Transactional;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,13 +17,15 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-@Component
 public class RecipeServiceImpl implements RecipeService {
     @Autowired
     private RecipeRepository recipeRepository;
 
     @Autowired
     private CommentService commentRepository;
+
+    @Autowired
+    private UserService userService;
 
 
 
@@ -57,7 +58,7 @@ public class RecipeServiceImpl implements RecipeService {
 
 
 
-
+    @Override
     @Transactional
     public List<RecipeDto> getAllRecipesByRecipeId(long recipeId){
         Optional<Recipe> recipeOptional = recipeRepository.findById(recipeId);
@@ -79,26 +80,26 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
 
-
+    @Override
     @Transactional
-    public List<String> addComment(Long recipeId, CommentDto commentDto, Long userId){
+    public List<String> addComment(Long recipeId, CommentDto commentDto, Long user_id){
         List<String> response = new ArrayList<>();
-        List<String> commentList = commentRepository.addComment(commentDto, recipeId, userId);
+        List<String> commentList = commentRepository.addComment(commentDto, recipeId, user_id);
         response.add("Comment Added!");
         return response;
-
     }
 
     @Override
-    public String getRecipeByName(String recipeName) {
-        List<Recipe> recipeOptional = recipeRepository.findAll();
-        for(int i=0; i<recipeOptional.size(); i++){
-            if(recipeOptional.contains(recipeName)){
-                return recipeOptional.get(i).getRecipeName();
-            }
+    @Transactional
+    public Recipe getRecipeByName(RecipeDto recipeDto) {
+        Optional<Recipe> recipeOptional = recipeRepository.findByRecipeName(recipeDto);
+        if(recipeOptional.isPresent()){
+            return recipeOptional.get();
+        } else {
+            return null;
         }
 
-        return String.valueOf(Optional.empty());
     }
 
+   
 }

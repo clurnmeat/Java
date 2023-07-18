@@ -7,7 +7,8 @@ import java.util.List;
 
 public interface CommentService {
     @Transactional
-    List<String> addComment(CommentDto commentDto, Long recipeId);
+    List<String> addComment(CommentDto commentDto, Long recipe_id, Long user_id);
+
 
     @Transactional
     void deleteComment(long commentId);
