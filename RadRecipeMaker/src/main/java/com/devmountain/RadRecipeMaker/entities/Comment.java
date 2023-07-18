@@ -1,11 +1,15 @@
 package com.devmountain.RadRecipeMaker.entities;
 
 import com.devmountain.RadRecipeMaker.dtos.CommentDto;
+import com.devmountain.RadRecipeMaker.dtos.RecipeDto;
+import com.devmountain.RadRecipeMaker.dtos.UserDto;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Set;
 
 @Entity
 @Table(name = "comments")
@@ -29,13 +33,16 @@ public class Comment {
     @JsonBackReference(value = "recipe")
     private Recipe recipe;
 
-    public Comment(CommentDto commentDto) {
-
+    public Comment(CommentDto commentDto, User user, Recipe recipe) {
+        this.id = commentDto.getId();
+        this.comment = commentDto.getComment();
+        this.user = user;
+        this.recipe = recipe;
     }
 
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(CommentDto commentDto) {
+        this.user = commentDto.getUser();
     }
 
     public void setRecipe(Recipe recipe) {
@@ -43,15 +50,15 @@ public class Comment {
     }
 
     public User getUser() {
-        return user;
+        return this.user;
     }
 
     public Recipe getRecipe() {
-        return recipe;
+        return this.recipe;
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -59,7 +66,7 @@ public class Comment {
     }
 
     public String getComment() {
-        return comment;
+        return this.comment;
     }
 
     public void setComment(String comment) {

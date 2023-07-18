@@ -20,7 +20,7 @@ public class RecipeDto implements Serializable {
     private String recipe_name;
 
 
-    private Set<Comment> commentDtoSet = new HashSet<>();
+    private Set<Long> commentSet = new HashSet<>();
 
 
 

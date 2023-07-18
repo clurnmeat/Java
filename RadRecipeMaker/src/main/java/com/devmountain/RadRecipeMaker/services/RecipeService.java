@@ -2,7 +2,9 @@ package com.devmountain.RadRecipeMaker.services;
 
 import com.devmountain.RadRecipeMaker.dtos.CommentDto;
 import com.devmountain.RadRecipeMaker.dtos.RecipeDto;
+import com.devmountain.RadRecipeMaker.dtos.UserDto;
 import com.devmountain.RadRecipeMaker.entities.Recipe;
+import com.devmountain.RadRecipeMaker.entities.User;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
@@ -30,7 +32,9 @@ public interface RecipeService {
 
 
     @Transactional
-    List<String> addComment(Long recipeId, CommentDto commentDto, Long userId);
-    
-    
+    List<String> addComment(Recipe recipe, CommentDto commentDto, User user);
+
+
+    @Transactional
+    List<RecipeDto> getRecipeByName(RecipeDto recipeDto);
 }

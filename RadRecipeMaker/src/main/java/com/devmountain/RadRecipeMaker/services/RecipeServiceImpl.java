@@ -3,7 +3,9 @@ package com.devmountain.RadRecipeMaker.services;
 
 import com.devmountain.RadRecipeMaker.dtos.CommentDto;
 import com.devmountain.RadRecipeMaker.dtos.RecipeDto;
+import com.devmountain.RadRecipeMaker.dtos.UserDto;
 import com.devmountain.RadRecipeMaker.entities.Recipe;
+import com.devmountain.RadRecipeMaker.entities.User;
 import com.devmountain.RadRecipeMaker.repositories.RecipeRepository;
 import jakarta.transaction.Transactional;
 import org.jetbrains.annotations.NotNull;
@@ -82,22 +84,22 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     @Transactional
-    public List<String> addComment(Long recipeId, CommentDto commentDto, Long user_id){
+    public List<String> addComment(Recipe recipe, CommentDto commentDto, User user){
         List<String> response = new ArrayList<>();
-        List<String> commentList = commentRepository.addComment(commentDto, recipeId, user_id);
+        List<String> commentList = commentRepository.addComment(commentDto, recipe, user);
         response.add("Comment Added!");
-        return response;
+        return commentList;
     }
 
     @Override
     @Transactional
-    public Recipe getRecipeByName(RecipeDto recipeDto) {
-        Optional<Recipe> recipeOptional = recipeRepository.findByRecipeName(recipeDto);
+    public List<RecipeDto> getRecipeByName(RecipeDto recipeDto) {
+        Optional<Recipe> recipeOptional = recipeRepository.findByRecipeName(recipeDto.getRecipe_name());
         if(recipeOptional.isPresent()){
-            return recipeOptional.get();
-        } else {
-            return null;
+            List<Recipe> recipeList = recipeRepository.findAllById((Iterable<Long>) recipeOptional.get());
+            return recipeList.stream().map(recipe -> new RecipeDto(recipe)).collect(Collectors.toList());
         }
+        return Collections.emptyList();
 
     }
 

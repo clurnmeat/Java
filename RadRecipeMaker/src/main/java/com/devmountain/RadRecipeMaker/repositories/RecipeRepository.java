@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 @Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
-    Optional<Recipe> findByRecipeName(RecipeDto recipeDto);
+
+    Optional<Recipe> findByRecipeName(String recipeName);
 }

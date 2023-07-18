@@ -1,5 +1,6 @@
 package com.devmountain.RadRecipeMaker.entities;
 
+import com.devmountain.RadRecipeMaker.dtos.CommentDto;
 import com.devmountain.RadRecipeMaker.dtos.UserDto;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -30,10 +31,13 @@ public class User {
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JsonManagedReference(value = "user")
-    private Set<Comment> commentSet = new HashSet<>();
+    private User user;
 
 
     public User(UserDto userDto) {
+        this.id = userDto.getId();
+        this.password = userDto.getPassword();
+        this.username = userDto.getUsername();
     }
 
     public Long getId() {
@@ -60,13 +64,7 @@ public class User {
         this.password = password;
     }
 
-    public Set<Comment> getCommentSet() {
-        return commentSet;
-    }
 
-    public void setCommentSet(Set<Comment> commentSet) {
-        this.commentSet = commentSet;
-    }
 
 
 }

@@ -18,16 +18,19 @@ public class CommentController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private RecipeService recipeService;
+
     
 
     @PostMapping("/{recipe_id}/addcomment")
     public List<String> addComment(@RequestBody CommentDto commentDto, @PathVariable Long recipe_id){
-        return commentService.addComment(commentDto, recipe_id, commentDto.getUser().getId());
+            return commentService.addComment(commentDto, commentDto.getRecipe(), commentDto.getUser());
     }
 
     @DeleteMapping("/{recipe_id}/{comment_id}")
-    public void deleteComment(@PathVariable Long recipe_id, @PathVariable Long comment_id){
-        commentService.deleteComment(comment_id);
+    public void deleteComment(@RequestBody CommentDto commentDto){
+        commentService.deleteComment(commentDto.getId());
     }
 
 }

@@ -1,10 +1,14 @@
 package com.devmountain.RadRecipeMaker.services;
 
 import com.devmountain.RadRecipeMaker.dtos.CommentDto;
+import com.devmountain.RadRecipeMaker.dtos.RecipeDto;
+import com.devmountain.RadRecipeMaker.dtos.UserDto;
 import com.devmountain.RadRecipeMaker.entities.Comment;
 import com.devmountain.RadRecipeMaker.entities.Recipe;
+import com.devmountain.RadRecipeMaker.entities.User;
 import com.devmountain.RadRecipeMaker.repositories.CommentRepository;
 import com.devmountain.RadRecipeMaker.repositories.RecipeRepository;
+import com.devmountain.RadRecipeMaker.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,21 +26,16 @@ public class CommentServiceImpl implements CommentService {
     @Autowired
     private CommentRepository commentRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Override
     @Transactional
-    public List<String> addComment(CommentDto commentDto, Long recipe_id, Long user_id){
-        Optional<Recipe> recipeOptional = recipeRepository.findById(recipe_id);
+    public List<String> addComment(CommentDto commentDto, Recipe recipe, User user){
         List<String> response = new ArrayList<>();
-        Comment comment = new Comment(commentDto);
-        if(recipeOptional.isPresent()){
-            comment.setComment(commentDto.getComment());
-            commentRepository.saveAndFlush(comment);
-
-            response.add("Successfully added Comment");
-        } else {
-            response.add("Comment Failed to add. Please try again");
-        }
-
+        Comment comment = new Comment(commentDto, user, recipe);
+        commentRepository.saveAndFlush(comment);
+        response.add("Successfully added Comment");
         return response;
     }
 

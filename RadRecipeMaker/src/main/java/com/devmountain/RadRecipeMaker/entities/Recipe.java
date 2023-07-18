@@ -21,17 +21,17 @@ public class Recipe {
     private Long id;
 
     @Column
-    private String recipe_name;
+    private String recipeName;
 
     @Column
-    private String recipe_ingredients;
+    private String recipeIngredients;
 
     @Column
     private String recipe;
 
-    @OneToMany(mappedBy = "recipe", cascade = {CascadeType.MERGE, CascadeType.ALL})
-    @JsonManagedReference(value="recipe-comment")
-    private Set<Comment> commentSet = new HashSet<>();
+    @OneToMany(mappedBy = "recipe", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JsonManagedReference(value="recipe")
+    private Set<Long> commentSet = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -39,19 +39,19 @@ public class Recipe {
 
     public Recipe(RecipeDto recipeDto) {
         this.id = recipeDto.getId();
-        this.recipe_name = recipeDto.getRecipe_name();
-        this.recipe_ingredients = recipeDto.getRecipe_ingredients();
+        this.recipeName = recipeDto.getRecipe_name();
+        this.recipeIngredients = recipeDto.getRecipe_ingredients();
         this.recipe = recipeDto.getRecipe();
-        this.commentSet = recipeDto.getCommentDtoSet();
+        this.commentSet = recipeDto.getCommentSet();
     }
 
 
 
-    public Set<Comment> getCommentSet() {
+    public Set<Long> getCommentSet() {
         return commentSet;
     }
 
-    public void setCommentSet(Set<Comment> commentSet) {
+    public void setCommentSet(Set<Long> commentSet) {
         this.commentSet = commentSet;
     }
 
@@ -60,23 +60,23 @@ public class Recipe {
     }
 
     public String getRecipeName() {
-        return this.recipe_name;
+        return this.recipeName;
     }
 
     public void setRecipeName(String recipeName) {
-        this.recipe_name = recipeName;
+        this.recipeName = recipeName;
     }
 
     public String getRecipeIngredients() {
-        return this.recipe_ingredients;
+        return this.recipeIngredients;
     }
 
     public void setRecipeIngredients(String recipeIngredients) {
-        this.recipe_ingredients = recipeIngredients;
+        this.recipeIngredients = recipeIngredients;
     }
 
     public String getRecipe() {
-        return recipe;
+        return this.recipe;
     }
 
     public void setRecipe(String recipe) {
