@@ -18,9 +18,9 @@ public class RecipeDto implements Serializable {
     private String recipe;
     private String recipe_ingredients;
     private String recipe_name;
+    private Recipe comments;
 
 
-    private Set<Long> commentSet = new HashSet<>();
 
 
 
@@ -40,6 +40,8 @@ public class RecipeDto implements Serializable {
         if(recipe.getRecipe() != null){
             this.recipe = recipe.getRecipe();
         }
+
+        if(recipe.)
 
 
 

@@ -1,5 +1,6 @@
 package com.devmountain.RadRecipeMaker.entities;
 
+import com.devmountain.RadRecipeMaker.dtos.CommentDto;
 import com.devmountain.RadRecipeMaker.dtos.RecipeDto;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -31,7 +32,7 @@ public class Recipe {
 
     @OneToMany(mappedBy = "recipe", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JsonManagedReference(value="recipe")
-    private Set<Long> commentSet = new HashSet<>();
+    private Comment comments;
 
     public Long getId() {
         return id;
@@ -42,17 +43,16 @@ public class Recipe {
         this.recipeName = recipeDto.getRecipe_name();
         this.recipeIngredients = recipeDto.getRecipe_ingredients();
         this.recipe = recipeDto.getRecipe();
-        this.commentSet = recipeDto.getCommentSet();
     }
 
 
 
-    public Set<Long> getCommentSet() {
-        return commentSet;
+    public Comment getCommentSet() {
+        return comments;
     }
 
-    public void setCommentSet(Set<Long> commentSet) {
-        this.commentSet = commentSet;
+    public void setCommentSet(Comment comments) {
+        this.comments = comments;
     }
 
     public void setId(Long id) {
